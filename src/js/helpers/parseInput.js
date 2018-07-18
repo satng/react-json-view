@@ -1,3 +1,5 @@
+import moment from "moment/moment";
+
 export default function parseInput(input) {
 
     //following code is to make a best guess at
@@ -54,7 +56,8 @@ export default function parseInput(input) {
         //check to see if this is a date
         input = Date.parse(input);
         if (input) {
-            return (formatResponse('date', new Date(input)));
+            input =moment(input).format('YYYY-MM-DD hh:mm:ss')
+            return (formatResponse('date',input));
         }
     }
     }

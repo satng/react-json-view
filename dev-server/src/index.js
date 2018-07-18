@@ -8,6 +8,7 @@ import Moment from "moment"
 
 //import the react-json-view component (installed with npm)
 import JsonViewer from "./../../src/js/index"
+import moment from "moment/moment";
 
 //render 2 different examples of the react-json-view component
 ReactDom.render(
@@ -198,7 +199,7 @@ function getExampleJson1() {
             }
         },
         string_number: "1234",
-        date: new Date(),
+        date: Moment().format('YYYY-MM-DD hh:mm:ss'),
         moment: Moment(),
         regexp: /[0-9]/gi
     }

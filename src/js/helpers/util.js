@@ -1,3 +1,37 @@
+function isDate(str) {
+    var result = str.match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/);
+    if (result == null) return false;
+    var d = new Date(result[1], result[3] - 1, result[4]);
+    return (
+        d.getFullYear() == result[1] &&
+        d.getMonth() + 1 == result[3] &&
+        d.getDate() == result[4]
+    );
+}
+
+function isDateTime(str) {
+    var result = str.match(
+        /^(\d{4})(-|\/)(\d{1,2})\2(\d{1,2}) (\d{1,2}):(\d{1,2}):(\d{1,2})$/
+    );
+    if (result == null) return false;
+    var d = new Date(
+        result[1],
+        result[3] - 1,
+        result[4],
+        result[5],
+        result[6],
+        result[7]
+    );
+    return (
+        d.getFullYear() == result[1] &&
+        d.getMonth() + 1 == result[3] &&
+        d.getDate() == result[4] &&
+        d.getHours() == result[5] &&
+        d.getMinutes() == result[6] &&
+        d.getSeconds() == result[7]
+    );
+}
+
 //returns a string "type" of input object
 export function toType(obj) {
     let type = getType(obj);
@@ -10,6 +44,10 @@ export function toType(obj) {
             type = 'float';
         } else {
             type = 'integer';
+        }
+    }else if(type === 'string') {
+        if(isDate(obj) || isDateTime(obj)){
+            return 'date';
         }
     }
     return type;
