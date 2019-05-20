@@ -56,7 +56,7 @@ export default function parseInput(input) {
         //check to see if this is a date
         input = Date.parse(input);
         if (input) {
-            input =moment(input).format('YYYY-MM-DD hh:mm:ss')
+            input =moment(input).format('YYYY-MM-DD HH:mm:ss')
             return (formatResponse('date',input));
         }
     }

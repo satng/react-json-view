@@ -212,7 +212,7 @@ class VariableEditor extends React.PureComponent {
         case 'undefined':
             return <JsonUndefined {...props} />;
         case 'date':
-            return <JsonDate value={moment(variable.value).format('YYYY-MM-DD hh:mm:ss')} {...props} />;
+            return <JsonDate value={moment(variable.value).format('YYYY-MM-DD HH:mm:ss')} {...props} />;
         case 'regexp':
             return <JsonRegexp value={variable.value} {...props} />;
         default:
@@ -421,7 +421,7 @@ class VariableEditor extends React.PureComponent {
             case 'undefined':
                 return <JsonUndefined {...props} />;
             case 'date':
-                return <JsonDate value={moment(value).format('YYYY-MM-DD hh:mm:ss')} {...props} />;
+                return <JsonDate value={moment(value).format('YYYY-MM-DD HH:mm:ss')} {...props} />;
             }
         }
     }

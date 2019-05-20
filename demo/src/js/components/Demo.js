@@ -475,7 +475,7 @@ export default class extends React.PureComponent {
                 "last-child": null
             },
             string_number: "1234",
-            date: moment().format('YYYY-MM-DD hh:mm:ss')
+            date: moment().format('YYYY-MM-DD HH:mm:ss')
         }
     }
 }

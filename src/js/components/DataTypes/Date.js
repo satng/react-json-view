@@ -12,7 +12,7 @@ export default class extends React.PureComponent {
             <div {...Theme(props.theme, 'date')}>
                 <DataTypeLabel type_name={type_name} {...props} />
                 <span class="date-value" {...Theme(props.theme, 'date-value')}>
-                    {moment(props.value).format('YYYY-MM-DD hh:mm:ss')}
+                    {moment(props.value).format('YYYY-MM-DD HH:mm:ss')}
                 </span>
             </div>
         );

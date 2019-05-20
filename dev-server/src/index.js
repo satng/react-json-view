@@ -199,7 +199,7 @@ function getExampleJson1() {
             }
         },
         string_number: "1234",
-        date: Moment().format('YYYY-MM-DD hh:mm:ss'),
+        date: Moment().format('YYYY-MM-DD HH:mm:ss'),
         moment: Moment(),
         regexp: /[0-9]/gi
     }
